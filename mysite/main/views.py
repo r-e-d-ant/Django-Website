@@ -4,6 +4,7 @@ from django.utils import timezone
 from .models import ToDoList
 from .forms import CreateListForm
 # Create your views here.
+# Here will be all the views required to make the app
 
 def index(request, id):
 	ls = ToDoList.objects.get(id=id)
@@ -58,3 +59,6 @@ def home(request):
 def view(request):
 	l = ToDoList.objects.all()
 	return render(request, "main/view.html", {"lists":l})
+
+def try(request):
+	return HttpResponse("Hello, Nice try")
